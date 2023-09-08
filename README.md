@@ -6,9 +6,12 @@ A basic web application built with React, TypeScript, and Tailwind CSS that allo
 
 - Create new counters.
 - Increment and decrement any counter.
+- Label counters.
 - Remove counters.
 - Persistent counter data using `localStorage`.
 - Real-time synchronization of counter changes between multiple tabs/windows using `localStorage`.
+- Supports Dark Mode.
+- Responsive Design to work seamlessly on desktop and mobile devices.
 
 ## Getting Started
 
@@ -26,7 +29,7 @@ Before you begin, ensure you have the following installed on your system:
 1. Clone the repository to your local machine (or download the ZIP file):
 
    ```bash
-   git clone https://github.com/your-username/counter-app.git
+   git clone https://github.com/Inqonsecuential/simple-counter.git
    ```
 
 2. Navigate to the project directory:
