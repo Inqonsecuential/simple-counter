@@ -1,4 +1,4 @@
-// App.tsx
+// IndexPage.tsx
 import React, { useState, useEffect } from 'react';
 import Counter from '@/components/counter';
 
@@ -9,7 +9,23 @@ const IndexPage: React.FC = () => {
   useEffect(() => {
     const savedCounters = JSON.parse(localStorage.getItem('counters') || '[]');
     setCounters(savedCounters);
+
+    // Listen for changes in localStorage from other tabs/windows
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      // Remove the event listener when the component unmounts
+      window.removeEventListener('storage', handleStorageChange);
+    };
   }, []);
+
+  // Function to handle changes in localStorage from other tabs/windows
+  const handleStorageChange = (e: StorageEvent) => {
+    if (e.key === 'counters') {
+      const savedCounters = JSON.parse(e.newValue || '[]');
+      setCounters(savedCounters);
+    }
+  };
 
   // Save counters to localStorage whenever they change
   useEffect(() => {
@@ -39,12 +55,12 @@ const IndexPage: React.FC = () => {
   };
 
   return (
-    <div className='max-w-7xl mx-auto p-4'>
-      <h1 className='text-3xl font-bold py-8 lg:py-10 font-lexend text-gray-800'>
-        Simple Counter App
+    <div className='max-w-7xl mx-auto '>
+      <h1 className='text-3xl font-bold py-8 lg:py-10 font-lexend'>
+        Simple Counter IndexPage
       </h1>
       <button
-        className='bg-blue-600 text-white px-3 py-2 font-bold rounded mb-4 font-lexend hover:bg-blue-800 transition-all duration-200'
+        className='bg-blue-500 text-white px-3 py-2 rounded mb-4 font-lexend transition-all duration-200 hover:bg-blue-700'
         onClick={addCounter}
       >
         Create New Counter

@@ -8,6 +8,7 @@ A basic web application built with React, TypeScript, and Tailwind CSS that allo
 - Increment and decrement any counter.
 - Remove counters.
 - Persistent counter data using `localStorage`.
+- Real-time synchronization of counter changes between multiple tabs/windows using `localStorage`.
 
 ## Getting Started
 
@@ -84,3 +85,4 @@ This project is licensed under the GNU GPL v3 License - see the [LICENSE](LICENS
 - This app is built with React, TypeScript, and Tailwind CSS.
 - Tailwind CSS styles are included for quick and easy styling.
 - Counter data persistence is achieved using `localStorage`.
+- Real-time synchronization of counter changes is achieved using `localStorage`.
