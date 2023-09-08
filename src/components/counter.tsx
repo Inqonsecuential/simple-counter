@@ -80,7 +80,6 @@ const Counter: React.FC<CounterProps> = ({
             >
               X
             </button>
-            .
           </div>
         </div>
       </div>
